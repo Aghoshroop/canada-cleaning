@@ -122,7 +122,7 @@ export default function Hero() {
             animate="visible"
             style={{
               fontFamily: 'var(--font-cormorant)',
-              fontSize: 'clamp(3.5rem, 7.5vw, 7rem)',
+              fontSize: 'clamp(2.75rem, 12vw, 7rem)',
               fontWeight: 400,
               lineHeight: 1.0,
               letterSpacing: '-0.03em',
@@ -285,27 +285,29 @@ export default function Hero() {
           role="img"
         >
           {/* AFTER image (base) */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              transform: `translateY(${parallaxY}px) scale(1.08)`,
-              transformOrigin: 'center top',
-            }}
-          >
-            <Image
-              src={AFTER_IMG}
-              alt="Spotlessly clean kitchen after Canada Cleaning service"
-              fill
-              sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-              priority
-            />
-            {/* Clean overlay */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(to bottom, rgba(245,242,238,0.08) 0%, transparent 40%)',
-            }} />
+          <div style={{ position: 'absolute', inset: 0 }}>
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                transform: `translateY(${parallaxY}px) scale(1.08)`,
+                transformOrigin: 'center top',
+              }}
+            >
+              <Image
+                src={AFTER_IMG}
+                alt="Spotlessly clean kitchen after Canada Cleaning service"
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                priority
+              />
+              {/* Clean overlay */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(to bottom, rgba(245,242,238,0.08) 0%, transparent 40%)',
+              }} />
+            </div>
           </div>
 
           {/* BEFORE image (masked) */}
@@ -315,27 +317,34 @@ export default function Hero() {
               inset: 0,
               clipPath: `inset(0 ${100 - wipeX}% 0 0)`,
               transition: isDragging.current ? 'none' : 'clip-path 0.05s',
-              transform: `translateY(${parallaxY}px) scale(1.08)`,
-              transformOrigin: 'center top',
             }}
           >
-            <Image
-              src={BEFORE_IMG}
-              alt="Kitchen before professional cleaning"
-              fill
-              sizes="(max-width: 768px) 100vw, 45vw"
+            <div
               style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-                filter: 'saturate(0.6) brightness(0.85)',
+                position: 'absolute',
+                inset: 0,
+                transform: `translateY(${parallaxY}px) scale(1.08)`,
+                transformOrigin: 'center top',
               }}
-              priority
-            />
-            {/* Haze overlay */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'rgba(180,170,160,0.25)',
-            }} />
+            >
+              <Image
+                src={BEFORE_IMG}
+                alt="Kitchen before professional cleaning"
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  filter: 'saturate(0.6) brightness(0.85)',
+                }}
+                priority
+              />
+              {/* Haze overlay */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'rgba(180,170,160,0.25)',
+              }} />
+            </div>
           </div>
 
           {/* Wipe divider line */}
@@ -399,7 +408,7 @@ export default function Hero() {
             opacity: wipeX > 80 ? 0 : 1,
             transition: 'opacity 0.3s',
           }}>
-            <span className="label" style={{ color: 'rgba(255,255,255,0.9)', background: 'rgba(192,57,43,0.7)', padding: '0.3rem 0.6rem' }}>
+            <span className="label" style={{ color: 'rgba(255,255,255,0.9)', background: 'rgba(15,76,58,0.7)', padding: '0.3rem 0.6rem' }}>
               After
             </span>
           </div>

@@ -60,13 +60,7 @@ export default function Process() {
         </motion.div>
 
         {/* Steps grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
-            gap: '0',
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -77,14 +71,13 @@ export default function Process() {
                 duration: 0.8,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              style={{
-                padding: '2.5rem 2rem 2.5rem 0',
-                borderRight: i < steps.length - 1
-                  ? '1px solid rgba(245,242,238,0.08)'
-                  : 'none',
-                paddingRight: i < steps.length - 1 ? '2rem' : 0,
-                paddingLeft: i > 0 ? '2rem' : 0,
-              }}
+              className={`
+                flex flex-col 
+                lg:border-r lg:border-white/10 
+                lg:px-8
+                ${i === 0 ? 'lg:pl-0' : ''}
+                ${i === steps.length - 1 ? 'lg:border-r-0 lg:pr-0' : ''}
+              `}
             >
               {/* Large number */}
               <div

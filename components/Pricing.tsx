@@ -118,12 +118,13 @@ export default function Pricing() {
                   fontWeight: 600,
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
-                  padding: '0.6rem 1.25rem',
+                  padding: '0.6rem clamp(0.5rem, 2vw, 1.25rem)',
                   background: billing === cycle ? 'var(--fg)' : 'transparent',
                   color: billing === cycle ? 'var(--ivory)' : 'var(--muted)',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
+                  whiteSpace: 'nowrap',
                 }}
               >
                 {cycle === 'onetime' ? 'One-Time' : 'Recurring — Save 15%'}
@@ -134,12 +135,8 @@ export default function Pricing() {
 
         {/* Cards */}
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-            gap: '1px',
-            background: 'rgba(17,17,16,0.1)',
-          }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-[1px]"
+          style={{ background: 'rgba(17,17,16,0.1)' }}
         >
           {plans.map((plan, i) => (
             <motion.article

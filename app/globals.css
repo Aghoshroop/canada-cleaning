@@ -10,7 +10,7 @@
   --color-charcoal: #111110;
   --color-slate:   #6B6B6B;
   --color-mist:    #E8E4DF;
-  --color-crimson: #C0392B;
+  --color-emerald: #0F4C3A;
   --color-cream:   #FAF8F5;
   --color-sand:    #D4CFC8;
 
@@ -29,7 +29,7 @@
 :root {
   --bg: #F5F2EE;
   --fg: #111110;
-  --accent: #C0392B;
+  --accent: #0F4C3A;
   --muted: #6B6B6B;
   --border: rgba(17,17,16,0.1);
 }
@@ -103,7 +103,7 @@ button {
    SELECTION
    ============================================================ */
 ::selection {
-  background: rgba(192, 57, 43, 0.15);
+  background: rgba(15, 76, 58, 0.15);
   color: var(--fg);
 }
 
@@ -177,7 +177,7 @@ button {
 #cursor.hovering {
   width: 60px;
   height: 60px;
-  background: rgba(192, 57, 43, 0.12);
+  background: rgba(15, 76, 58, 0.12);
   mix-blend-mode: normal;
 }
 

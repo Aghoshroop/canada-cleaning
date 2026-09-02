@@ -38,20 +38,13 @@ export default function FAQ() {
       style={{ background: 'var(--mist)' }}
     >
       <div className="container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,400px),1fr))',
-            gap: 'clamp(3rem, 6vw, 6rem)',
-            alignItems: 'start',
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
           {/* Left — header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{ position: 'sticky', top: '7rem' }}
+            className="md:sticky md:top-28"
           >
             <div className="accent-line" />
             <h2

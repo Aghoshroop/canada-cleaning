@@ -192,7 +192,7 @@ export default function Navigation() {
 
                 {/* Hamburger */}
                 <button
-                  className="md:hidden flex flex-col gap-1.5 p-1"
+                  className="md:hidden flex flex-col gap-1.5 p-3 -mr-2"
                   onClick={() => setMobileOpen(!mobileOpen)}
                   aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                   aria-expanded={mobileOpen}

@@ -121,8 +121,8 @@ export default function Transformation() {
               }}
             >
               <span className="label" style={{
-                background: 'rgba(17,17,16,0.6)',
-                color: 'rgba(245,242,238,0.7)',
+                background: 'rgba(15,76,58,0.8)',
+                color: 'rgba(255,255,255,0.9)',
                 padding: '0.4rem 0.8rem',
                 backdropFilter: 'blur(6px)',
               }}>

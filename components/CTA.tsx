@@ -66,14 +66,7 @@ export default function CTA() {
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
-            gap: 'clamp(3rem, 6vw, 6rem)',
-            alignItems: 'center',
-          }}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left — copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -357,7 +350,7 @@ export default function CTA() {
                   }}
                   onMouseEnter={(e) => {
                     if (!loading) {
-                      e.currentTarget.style.background = '#a93226';
+                      e.currentTarget.style.background = '#0c3f30';
                       e.currentTarget.style.transform = 'translateY(-2px)';
                     }
                   }}

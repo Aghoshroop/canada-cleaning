@@ -48,11 +48,8 @@ export default function Footer() {
 
       {/* Links grid */}
       <div
-        className="container"
+        className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
-          gap: '3rem',
           padding: '3rem 2rem 4rem',
         }}
       >

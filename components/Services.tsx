@@ -104,14 +104,7 @@ export default function Services() {
         </div>
 
         {/* Desktop: side-by-side | Mobile: vertical stack */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))',
-            gap: '3rem',
-            alignItems: 'start',
-          }}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Service list */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {services.map((svc, i) => (
