@@ -1,6 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import AmbientBackground from './AmbientBackground';
 
 const steps = [
@@ -8,21 +9,29 @@ const steps = [
     number: '01',
     headline: 'Tell us what needs attention.',
     body: 'Book online in 60 seconds. Select your service, choose a date, share any specifics. No calls required.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
+    alt: 'Booking a cleaning service online',
   },
   {
     number: '02',
     headline: 'We arrive prepared.',
     body: 'A vetted, fully-equipped professional arrives on time — every time. We bring everything needed.',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
+    alt: 'Professional cleaning supplies ready',
   },
   {
     number: '03',
     headline: 'We transform the space.',
     body: 'A thorough, methodical clean that goes beyond the surface. We care for your home as if it were our own.',
+    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop',
+    alt: 'Sparkling clean home interior details',
   },
   {
     number: '04',
     headline: 'You walk into the difference.',
     body: 'Come home to clarity. If anything falls short of perfect, let us know within 24 hours and we\'ll return — free.',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop',
+    alt: 'Beautifully clean and welcoming home',
   },
 ];
 
@@ -116,11 +125,22 @@ export default function Process() {
                   color: 'rgba(245,242,238,0.95)',
                   letterSpacing: '-0.01em',
                   lineHeight: 1.2,
-                  marginBottom: '0.75rem',
+                  marginBottom: '1rem',
                 }}
               >
                 {step.headline}
               </h3>
+
+              {/* Mobile Image Interlace */}
+              <div className="block lg:hidden relative w-full aspect-[4/3] mb-5 overflow-hidden">
+                <Image
+                  src={step.image}
+                  alt={step.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 0vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
 
               <p
                 style={{

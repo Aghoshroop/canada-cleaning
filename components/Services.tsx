@@ -159,41 +159,54 @@ export default function Services() {
                   </h3>
                   <AnimatePresence>
                     {active === i && (
-                      <motion.p
+                      <motion.div
                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                         animate={{ opacity: 1, height: 'auto', marginTop: '0.6rem' }}
                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
                         transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
-                        style={{
-                          fontFamily: 'var(--font-dm-sans)',
-                          fontSize: '0.875rem',
-                          color: 'var(--muted)',
-                          lineHeight: 1.65,
-                          overflow: 'hidden',
-                        }}
+                        style={{ overflow: 'hidden' }}
                       >
-                        {svc.description}
-                        {' '}
-                        <a
-                          href="#cta"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            document.querySelector('#cta')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
+                        {/* Mobile Image */}
+                        <div className="block lg:hidden relative w-full aspect-[4/3] mb-5 mt-2 overflow-hidden">
+                          <Image
+                            src={svc.image}
+                            alt={svc.alt}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            style={{ objectFit: 'cover' }}
+                          />
+                        </div>
+                        <p
                           style={{
-                            color: 'var(--accent)',
-                            fontWeight: 600,
-                            textDecoration: 'none',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.25rem',
-                            marginTop: '0.5rem',
+                            fontFamily: 'var(--font-dm-sans)',
+                            fontSize: '0.9rem',
+                            color: 'var(--muted)',
+                            lineHeight: 1.7,
                           }}
                         >
-                          Get a quote →
-                        </a>
-                      </motion.p>
+                          {svc.description}
+                          {' '}
+                          <a
+                            href="#cta"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              e.preventDefault();
+                              document.querySelector('#cta')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            style={{
+                              color: 'var(--accent)',
+                              fontWeight: 600,
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.25rem',
+                              marginTop: '0.5rem',
+                            }}
+                          >
+                            Get a quote →
+                          </a>
+                        </p>
+                      </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
