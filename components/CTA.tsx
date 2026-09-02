@@ -1,6 +1,7 @@
 'use client';
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import AmbientBackground from './AmbientBackground';
 
 export default function CTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,6 +46,7 @@ export default function CTA() {
         paddingBottom: 'clamp(5rem, 12vh, 9rem)',
       }}
     >
+      <AmbientBackground color="rgba(15, 76, 58, 0.2)" />
       {/* Background text decoration */}
       <div
         aria-hidden="true"

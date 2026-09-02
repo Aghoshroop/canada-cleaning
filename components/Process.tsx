@@ -1,6 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import AmbientBackground from './AmbientBackground';
 
 const steps = [
   {
@@ -34,9 +35,10 @@ export default function Process() {
       id="process"
       ref={ref}
       className="section-padding"
-      style={{ background: 'var(--fg)', overflow: 'hidden' }}
+      style={{ background: 'var(--fg)', overflow: 'hidden', position: 'relative' }}
     >
-      <div className="container">
+      <AmbientBackground color="rgba(15, 76, 58, 0.25)" />
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

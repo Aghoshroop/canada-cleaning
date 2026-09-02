@@ -2,6 +2,7 @@
 import { useRef, useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import AmbientBackground from './AmbientBackground';
 
 const BEFORE_IMG = 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1400&auto=format&fit=crop';
 const AFTER_IMG  = 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1400&auto=format&fit=crop';
@@ -80,6 +81,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
+      <AmbientBackground color="rgba(15, 76, 58, 0.08)" />
       {/* Grid layout */}
       <div
         style={{
