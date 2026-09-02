@@ -61,7 +61,7 @@ export default function Hero() {
       transition: {
         delay: 0.2 + i * 0.12,
         duration: 0.9,
-        ease: [0.19, 1, 0.22, 1],
+        ease: [0.19, 1, 0.22, 1] as const,
       },
     }),
   };
